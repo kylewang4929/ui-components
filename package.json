@@ -1,6 +1,6 @@
 {
   "name": "gizwits_components",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.3.13",

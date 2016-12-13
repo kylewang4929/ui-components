@@ -9,7 +9,7 @@
 ```js
 import React, {Component} from 'react';
 
-import TabMenu from './TabMenu.js';
+import {TabMenu} from 'gizwits_components';
 
 class TabMenuExample extends Component {
   constructor(props) {
