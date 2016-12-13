@@ -1,0 +1,24 @@
+{
+  "name": "gizwits_components",
+  "version": "1.0.0",
+  "description": "gizwits web components",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylewang4929/gizwits_web_components.git"
+  },
+  "keywords": [
+    "gizwits",
+    "web",
+    "components"
+  ],
+  "author": "gizwits",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kylewang4929/gizwits_web_components/issues"
+  },
+  "homepage": "https://github.com/kylewang4929/gizwits_web_components#readme"
+}

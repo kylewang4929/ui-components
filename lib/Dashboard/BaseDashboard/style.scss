@@ -1,0 +1,35 @@
+$warmColor:#c59308;
+$warmLightColor:#e5a328;
+$coldColor:#09b5df;
+$coldLightColor:#4ed8f9;
+
+.base-dashboard{
+  &.warm{
+    .value{
+      color: $warmColor!important;
+    }
+    .state{
+      color: $warmColor!important;
+    }
+    .transparent-text{
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($warmLightColor), to($warmColor));        
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+  &.cold{
+    .value{
+      color: $coldColor!important;
+    }
+    .state{
+      color: $coldColor!important;
+    }
+    .transparent-text{
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($coldLightColor), to($coldColor));        
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+}
