@@ -1,6 +1,6 @@
 {
   "name": "gizwits_components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gizwits web components",
   "main": "index.js",
   "scripts": {
