@@ -61,4 +61,4 @@ export default BaseDashboardExample;
 |them|string|`cold`|主题，可选`cold`和`warm`|
 
 ## 主题
-> 提供两套主题，`warm`和`cold`，也可自行更改`scss`文件。
+> 提供两套主题，`warm`和`cold`，也可自行更改`css`文件。

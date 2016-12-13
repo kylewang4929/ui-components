@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-require('./style');
+require('./style.css');
 const bg = require('./wave.png');
 
 const styles = {

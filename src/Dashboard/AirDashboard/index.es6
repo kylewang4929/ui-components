@@ -1,6 +1,6 @@
 import React, {PropTypes, Component} from 'react';
 
-require('./style');
+import './style.css';
 
 const styles = {
   container: {
