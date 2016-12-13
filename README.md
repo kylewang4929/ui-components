@@ -6,7 +6,7 @@
 暂时还未编写测试代码，持续集成服务也暂时没有配置。
 
 ## components
-* [Links][./lib/Dashboard/AirDashboard/README.md]
-* [Links][./lib/Dashboard/BaseDashboard/README.md]
-* [Links][./lib/Dashboard/WaterDashboard/README.md]
-* [Links][./lib/TabMenu/README.md]
+* [AirDashboard](./lib/Dashboard/AirDashboard/README.md)
+* [BaseDashboard](./lib/Dashboard/BaseDashboard/README.md)
+* [WaterDashboard](./lib/Dashboard/WaterDashboard/README.md)
+* [TabMenu](./lib/TabMenu/README.md)
