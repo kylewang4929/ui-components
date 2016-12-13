@@ -1,0 +1,20 @@
+.base-dashboard.warm .value {
+  color: #c59308 !important; }
+.base-dashboard.warm .state {
+  color: #c59308 !important; }
+.base-dashboard.warm .transparent-text {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5a328), to(#c59308));
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; }
+.base-dashboard.cold .value {
+  color: #09b5df !important; }
+.base-dashboard.cold .state {
+  color: #09b5df !important; }
+.base-dashboard.cold .transparent-text {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4ed8f9), to(#09b5df));
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; }
+
+/*# sourceMappingURL=style.css.map */
