@@ -1,10 +1,14 @@
-var webpack = require("webpack"),
-    path = require("path");
-// Karma configuration Generated on Mon May 11 2015 14:13:57 GMT-0600 (MDT)
-module.exports = function (config) {
+var isCI = process.env.CONTINUOUS_INTEGRATION === 'true';
+var webpackConfig = require('./webpack.config.js');
+module.exports = function(config) {
     config.set({
-        basePath: "",
-        frameworks: ["jasmine"],
+
+        basePath: '',
+
+        frameworks: [
+            'jasmine', 'phantomjs-shim'
+        ],
+
         files: [
           {pattern: 'test/**/*.test.js', included: true},
           {pattern: 'lib/**/*.js', included: false},
@@ -12,50 +16,41 @@ module.exports = function (config) {
         preprocessors: {
             "test/**/*.test.js": ["webpack"]
         },
-        webpack: {
-            module: {
-                loaders: [
-                    {
-                        test: /\.js$/,
-                        loader: "jsx-loader"
-                    }, {
-                        test: /\.css$/,
-                        loaders: [
-                        'style',
-                        'css',
-                        'postcss'
-                        ]
-                    },
-                    {
-                        test: /\.(png|jpg|gif|svg)$/,
-                        loader: 'url-loader?limit=8192'
-                    }
-                ]
-            },
-            plugins: [new webpack.ResolverPlugin([
-                    new webpack
-                        .ResolverPlugin
-                        .DirectoryDescriptionFilePlugin("package.json", ["main"])
-                ])],
-            resolve: {
-                root: [
-                    path.join(__dirname, "./node_modules"),
-                    path.join(__dirname, "./src")
-                ]
-            }
-        },
+
+        webpack: webpackConfig,
+
         webpackMiddleware: {
             noInfo: true
         },
-        plugins: [
-            require("karma-webpack"), require("karma-jasmine"), require("karma-chrome-launcher")
-        ],
-        reporters: ["dots"],
+
         port: 9876,
+
         colors: true,
-        logLevel: config.LOG_INFO,
+
         autoWatch: true,
-        browsers: ["Chrome"],
-        singleRun: false
+
+        browsers: ['PhantomJS', 'PhantomJS_custom'],
+
+        // you can define custom flags
+        customLaunchers: {
+            'PhantomJS_custom': {
+                base: 'PhantomJS',
+                options: {
+                    windowName: 'my-window',
+                    settings: {
+                        webSecurityEnabled: false
+                    }
+                },
+                flags: ['--load-images=true'],
+                debug: true
+            }
+        },
+
+        phantomjsLauncher: {
+            // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+            exitOnResourceError: true
+        },
+
+        singleRun: isCI
     });
 };
