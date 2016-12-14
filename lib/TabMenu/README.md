@@ -9,7 +9,7 @@
 ```js
 import React, {Component} from 'react';
 
-import {TabMenu} from 'gizwits_components';
+import TabMenu from './TabMenu.js';
 
 class TabMenuExample extends Component {
   constructor(props) {
@@ -69,4 +69,4 @@ export default TabMenuExample;
 |onChange|func|`null`|点击`item`时触发，返回被点击的菜单的数据`onChange(item){}`|
 
 ## 主题
-> 暂时只提供了一种配色，如需更改，请打开`TabMenu.scss`，并编辑`$mainColor`和`$textColor`颜色变量。
+> 暂时只提供了一种配色。

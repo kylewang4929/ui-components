@@ -127,7 +127,7 @@ class AirDashboard extends Component {
           <div style={Object.assign({}, styles.title, this.props.titleStyle)}>
             {this.props.title}
           </div>
-          <div style={Object.assign({}, styles.value, this.props.valueStyle)}>
+          <div className="value-text" style={Object.assign({}, styles.value, this.props.valueStyle)}>
             {this.props.value}
           </div>
           <div style={Object.assign({}, styles.tips, this.props.tipsStyle)}>
