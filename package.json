@@ -1,6 +1,10 @@
 {
   "name": "gizwits_components",
   "version": "1.0.10",
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^5.8.33",
@@ -26,8 +30,6 @@
     "mocha": "^3.2.0",
     "phantomjs": "^1.9.18",
     "postcss-loader": "^0.8.0",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
     "requirejs": "^2.3.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
