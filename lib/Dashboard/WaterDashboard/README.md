@@ -7,7 +7,7 @@
 ## 基础用法
 ```js
 import React, {Component} from 'react';
-import {BaseDashboard} from 'gizwits_components';
+import BaseDashboard from './BaseDashboard';
 
 const styles = {
   container: {

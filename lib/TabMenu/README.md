@@ -8,7 +8,8 @@
 ## 基础用法
 ```js
 import React, {Component} from 'react';
-import {TabMenu} from 'gizwits_components';
+
+import TabMenu from './TabMenu.js';
 
 class TabMenuExample extends Component {
   constructor(props) {

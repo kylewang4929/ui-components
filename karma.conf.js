@@ -1,5 +1,5 @@
 var isCI = process.env.CONTINUOUS_INTEGRATION === 'true';
-var webpackConfig = require('./webpack.config.js');
+var webpackConfig = require('./testloader.config.js');
 module.exports = function(config) {
     config.set({
 
