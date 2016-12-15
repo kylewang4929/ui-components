@@ -89,7 +89,6 @@ class AirDashboard extends Component {
     this.ctx.strokeStyle = grd; //生成的颜色块赋值给样式
     this.ctx.arc(this.props.radius, this.props.radius, this.props.radius - 10, 0, value, false);
     this.ctx.stroke();
-
   }
 
   //绘制canvas
@@ -213,6 +212,7 @@ class Point extends Component {
     this.transitionEvent = this.whichTransitionEvent();
   }
 
+  //分析支持哪个事件
   whichTransitionEvent() {
     let t,
       el = document.createElement('surface'),
@@ -229,7 +229,8 @@ class Point extends Component {
       }
     }
   }
-
+  
+  //创建随机动画
   createAnimate() {
     this.animateClass = parseInt(Math.random() * 1000) % 2? 'point-animation-left': 'point-animation-right';
     this.left = 0;
@@ -258,14 +259,13 @@ class Point extends Component {
   }
 
   transitionEnd() {
-    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd); //销毁事件
+    //销毁事件
+    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);
     //重置元素状态
     this.createAnimate();
-
     this.setState({
       class: ''
     });
-
     this.setState({
       css: {
         left: this.left,
@@ -277,8 +277,10 @@ class Point extends Component {
       class: ''
     });
 
+    //重新添加动画结束监听
     this.transitionEvent && this.dom.addEventListener(this.transitionEvent, this.transitionEnd);
 
+    //启动动画
     setTimeout(() => {
       this.setState({
         class: this.animateClass,
@@ -295,6 +297,7 @@ class Point extends Component {
 
   componentDidMount() {
     this.timeOutHandle = setTimeout(() => {
+      //设置开始时的动画
       this.setState({
         class: this.animateClass
       });
@@ -308,10 +311,12 @@ class Point extends Component {
         }
       });
     }, this.timeOut);
+    //监听动画结束的回调
     this.transitionEvent && this.dom.addEventListener(this.transitionEvent, this.transitionEnd);    
   }
 
   componentWillUnmount() {
+    //清除定时器
     clearTimeout(this.timeOutHandle);
   }
 

@@ -38,6 +38,7 @@ const styles = {
   }
 };
 
+//色卡
 const colorImage = require('./color.png');
 const lightImg = require('./ic_lamp.png');
 
@@ -63,7 +64,7 @@ class ColorPick extends Component {
     };
     this.clickState = false;
 
-    //判断事件类型
+    //判断点击事件类型
     this.hasTouch = 'ontouchstart' in window,
     this.startEvent = this.hasTouch ? 'touchstart' : 'mousedown';
     this.moveEvent = this.hasTouch ? 'touchmove' : 'mousemove';
@@ -78,6 +79,7 @@ class ColorPick extends Component {
     }
   }
 
+  //处理一个数组，数组内容是rgb颜色，把它转换成文字
   getColor(c) {
     const red = c[0];
     const green = c[1];
@@ -87,18 +89,21 @@ class ColorPick extends Component {
   }
 
   onmousedown(event) {
-
     //兼容事件
     const e = this.hasTouch ? event.touches[0] : event;
 
     this.clickState = true;
+    //获取原始坐标
     const originalPosition = {
       x: e.pageX,
       y: e.pageY
     };
+    //距离window的坐标
     let position = this.windowToCanvas(this.canvas, e.pageX, e.pageY);
+    //isCrossing的值代表是否命中色卡
     const isCrossing = this.crossingCorrect(position.x, position.y, this.props.radius, this.props.radius, this.props.radius);
     if(isCrossing){
+      //触发回调，这里写这个回调是为了给开发者处理一些特殊的问题
       this.props.onMouseDownIsHit(false, originalPosition);
       return;
     }else{
@@ -124,6 +129,7 @@ class ColorPick extends Component {
     }
   }
 
+  //判断是否命中色卡
   crossingCorrect(x, y, x1, y1, radius) {
     //x是事件触发点  x1是圆心
     const sideX = x1 - x;
@@ -136,7 +142,6 @@ class ColorPick extends Component {
     }else{
       return false;
     }
-
   }
 
   onmouseup(e) {
@@ -147,6 +152,7 @@ class ColorPick extends Component {
     }
   }
 
+  //计算距离window的位置
   windowToCanvas(canvas, x, y) {
     const bbox = canvas.getBoundingClientRect();
     const positionX = x - bbox.left * (canvas.width / bbox.width);
@@ -158,14 +164,12 @@ class ColorPick extends Component {
     const image = new Image();
     image.src = colorImage;
     image.onload = () => {
+      //渲染色卡
       this.ctx = this.canvas.getContext('2d');
       this.ctx.drawImage(image, 0, 0, this.props.radius*2, this.props.radius*2);
     };
 
-    //添加监听
-
-    //判断事件类型
-
+    //判断事件类型 添加监听
     this.canvas.addEventListener(this.startEvent, this.onmousedown);
     document.addEventListener(this.moveEvent, this.onmousemove);
     document.addEventListener(this.endEvent, this.onmouseup);
@@ -173,6 +177,7 @@ class ColorPick extends Component {
   }
 
   componentWillUnmount() {
+    //销毁
     document.removeEventListener(this.moveEvent, this.onmousemove);
     document.removeEventListener(this.endEvent, this.onmouseup);
   }
