@@ -1,6 +1,6 @@
 {
   "name": "gizwits_components",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "dependencies": {
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
