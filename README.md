@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/kylewang4929/gizwits_components.svg?branch=master)](https://travis-ci.org/kylewang4929/gizwits_components)
-[![NPM downloads](http://img.shields.io/npm/dm/gizwits_components.svg?style=flat-square)](https://npmjs.org/package/gizwits_components)
 # gizwits_components
 
 ## Live Docs
