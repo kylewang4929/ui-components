@@ -7,7 +7,7 @@
 ## 基础用法
 ```js
 import React, {Component} from 'react';
-import AirDashboard from './AirDashboard';
+import AirDashboard from 'gizwits_components';
 
 const styles = {
   container: {

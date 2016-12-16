@@ -2,6 +2,7 @@ var AirDashboard = require("./../../../lib/Dashboard").AirDashboard;
 
 var React = require("react");
 var TestUtils = require('react-dom/lib/ReactTestUtils');
+
 describe("components - AirDashboard - ", function() {
 	it("value is the right", function() {
 		var airDashboard = TestUtils.renderIntoDocument(
