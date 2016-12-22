@@ -318,6 +318,7 @@ class Point extends Component {
   componentWillUnmount() {
     //清除定时器
     clearTimeout(this.timeOutHandle);
+    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);
   }
 
   render() {
