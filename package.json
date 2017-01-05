@@ -1,22 +1,29 @@
 {
   "name": "gizwits_components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "dependencies": {
     "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react-dom": "^15.0.1",
+    "mdi": "^1.6.50"
   },
   "devDependencies": {
+    "autoprefixer": "^6.6.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
-    "babel-loader": "^6.2.7",
+    "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.7.4",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.11.1",
     "chai": "^3.5.0",
     "css-loader": "^0.26.1",
+    "eslint-loader": "^1.3.0",
     "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.26.0",
+    "image-webpack-loader": "^3.0.0",
     "jasmine-core": "^2.5.2",
+    "json-loader": "^0.5.4",
     "jsx-loader": "^0.13.2",
     "karma": "^1.3.0",
     "karma-chai": "^0.1.0",
@@ -29,18 +36,24 @@
     "karma-requirejs": "^1.1.0",
     "karma-webpack": "^1.7.0",
     "mocha": "^3.2.0",
+    "node-sass": "^3.4.2",
+    "path": "^0.12.7",
     "phantomjs": "^1.9.18",
     "postcss-loader": "^0.8.0",
+    "react-hot-loader": "^1.3.0",
     "requirejs": "^2.3.2",
+    "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.14.0"
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "description": "gizwits web components",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "build": "sh build.sh"
+    "build": "sh build.sh",
+    "serve": "webpack-dev-server --devtool eval --progress --colors"
   },
   "repository": {
     "type": "git",
