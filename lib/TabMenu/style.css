@@ -1,7 +1,7 @@
 .tab-bar-container {
   background-color: #16afcb;
   color: #fff;
-  padding: 6px 0px;
+  padding: 10px 0px;
   user-select: none; }
   .tab-bar-container .item {
     text-align: center;
@@ -10,6 +10,7 @@
     .tab-bar-container .item .text {
       display: block;
       line-height: 12px;
+      margin-top: 4px;
       font-size: 12px; }
     .tab-bar-container .item .icon {
       font-size: 18px; }
