@@ -5,7 +5,10 @@
 
 ## start
 `npm run build`运行编译，把src的组件编译到lib。
+
 `npm run test`运行测试。
+
+`npm run serve`运行开发环境
 
 ## components docs
 * [AirDashboard](./lib/Dashboard/AirDashboard/README.md)
