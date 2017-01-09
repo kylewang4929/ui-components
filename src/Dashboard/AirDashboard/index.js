@@ -281,7 +281,7 @@ class Point extends Component {
     this.transitionEvent && this.dom.addEventListener(this.transitionEvent, this.transitionEnd);
 
     //启动动画
-    setTimeout(() => {
+    this.transitionEndTimeout = setTimeout(() => {
       this.setState({
         class: this.animateClass,
         css: {
@@ -317,8 +317,9 @@ class Point extends Component {
 
   componentWillUnmount() {
     //清除定时器
-    clearTimeout(this.timeOutHandle);
     this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);
+    clearTimeout(this.transitionEndTimeout);        
+    clearTimeout(this.timeOutHandle);
   }
 
   render() {

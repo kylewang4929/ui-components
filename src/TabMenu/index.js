@@ -37,7 +37,7 @@ class TabMenu extends Component {
 
 TabMenu.defaultProps = {
   menus: [],
-  onChange: null,
+  onChange: () => {},
   boxStyle: {},
   textStyle: {},
   activeTextStyle: {}
