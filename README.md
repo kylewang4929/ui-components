@@ -8,7 +8,7 @@
 
 `npm run test`运行测试。
 
-`npm run serve`运行开发云环境
+`npm run serve`运行开发环境
 
 ## components docs
 * [AirDashboard](./lib/Dashboard/AirDashboard/README.md)
