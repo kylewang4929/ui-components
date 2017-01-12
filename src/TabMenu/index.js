@@ -17,10 +17,14 @@ class TabMenu extends Component {
       <div className='menu-shadow tab-bar-container' style={boxStyle}>
         {
           menus.map((item, index) => {
+            let isActive = item.isActive;
+            isActive = isActive === 'true' || isActive === true;
+
             return (
               <div onClick={(event) => {
                 this.handleClick(event, item, index, 'main');
-              }} style={Object.assign({}, {width: width+'%'}, item.isActive? activeTextStyle: textStyle)} className='item' key={'item-'+index}>
+              }} style={Object.assign({}, {width: width+'%'}, isActive? activeTextStyle: textStyle)} className='item' key={'item-'+index}>
+                <div className="over-layer"></div>
                 <i className={`icon ${item.icon}`}></i>
                 <span className='text'>
                   {item.name}

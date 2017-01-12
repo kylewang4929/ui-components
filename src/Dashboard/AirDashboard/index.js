@@ -16,7 +16,7 @@ const styles = {
     position: 'absolute',
     left: '0px',
     top: '50%',
-    marginTop: '-57px',
+    marginTop: '-52px',
     width: '100%',
     color: '#fff'
   },
@@ -156,7 +156,10 @@ AirDashboard.defaultProps = {
 };
 
 AirDashboard.propTypes = {
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+  ]),
   radius: PropTypes.number,
   ringColor: PropTypes.string,
   ringBgColor: PropTypes.string,
@@ -317,9 +320,9 @@ class Point extends Component {
 
   componentWillUnmount() {
     //清除定时器
-    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);
     clearTimeout(this.transitionEndTimeout);        
     clearTimeout(this.timeOutHandle);
+    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);
   }
 
   render() {
