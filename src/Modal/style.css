@@ -1,3 +1,6 @@
+.modal *{
+  box-sizing: border-box;
+}
 .modal .loader,
 .modal .loader:after {
   border-radius: 50%;

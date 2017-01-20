@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.PowerPage = exports.BarList = exports.InfoPanel = exports.Loading = exports.ConfirmInput = exports.ConfirmAlert = exports.Alert = exports.ColorPick = exports.TabMenu = exports.WaterDashboard = exports.BaseDashboard = exports.AirDashboard = undefined;
+exports.InputTipsPage = exports.ErrorPage = exports.PowerPage = exports.BarList = exports.InfoPanel = exports.Loading = exports.ConfirmInput = exports.ConfirmAlert = exports.Alert = exports.ColorPick = exports.TabMenu = exports.WaterDashboard = exports.BaseDashboard = exports.AirDashboard = undefined;
 
 var _Dashboard = require('./lib/Dashboard');
 
@@ -29,6 +29,14 @@ var _PowerPage = require('./lib/PowerPage');
 
 var _PowerPage2 = _interopRequireDefault(_PowerPage);
 
+var _ErrorPage = require('./lib/ErrorPage');
+
+var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
+
+var _InputTipsPage = require('./lib/InputTipsPage');
+
+var _InputTipsPage2 = _interopRequireDefault(_InputTipsPage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.AirDashboard = _Dashboard.AirDashboard;
@@ -43,3 +51,5 @@ exports.Loading = _Modal.Loading;
 exports.InfoPanel = _InfoPanel2.default;
 exports.BarList = _BarList2.default;
 exports.PowerPage = _PowerPage2.default;
+exports.ErrorPage = _ErrorPage2.default;
+exports.InputTipsPage = _InputTipsPage2.default;

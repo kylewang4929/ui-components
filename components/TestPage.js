@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PowerPage from '../src/PowerPage';
+import WaterDashboard from '../src/Dashboard/WaterDashboard';
 
 const styles = {
   container: {
@@ -21,7 +21,7 @@ class TestPage extends Component {
   render() {
     return (
       <div style={Object.assign({}, styles.container)}>
-        <PowerPage/>
+        <WaterDashboard value="1" unit="TDS"/>
       </div>
     );
   }

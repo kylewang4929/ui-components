@@ -19,16 +19,17 @@ class BarList extends Component {
 
   render() {
 
-    const {title, datas, titleStyle, labelStyle, valueStyle, indexStyle} = this.props;
+    const {title, data, titleStyle, labelStyle, valueStyle, indexStyle, itemStyle, listStyle} = this.props;
 
     return (
-      <div style={styles.container}>
+      <div style={Object.assign({}, styles.container, listStyle)}>
         <div style={{...styles.title, ...titleStyle}}>{title}</div>
         {
-          datas.map((item, index) => {
+          data.map((item, index) => {
             return (
               <BarItem 
                 key={'barItem' + index} 
+                itemStyle={itemStyle}
                 labelStyle={labelStyle} 
                 valueStyle={valueStyle} 
                 indexStyle={indexStyle} 
@@ -80,9 +81,9 @@ const itemStyles = {
 class BarItem extends Component {
 
   render() {
-    const {index, value, label, indexStyle, labelStyle, valueStyle} = this.props;
+    const {index, value, label, indexStyle, labelStyle, valueStyle, itemStyle} = this.props;
     return (
-      <div style={itemStyles.container}>
+      <div style={Object.assign({}, itemStyles.container, itemStyle)}>
         <span style={{...itemStyles.index, ...indexStyle}}><span style={itemStyles.indexText}>{index+1}</span></span>
         <span style={{...itemStyles.label, ...labelStyle}}>{label}</span>
         <span style={{...itemStyles.value, ...valueStyle}}>{value}</span>
