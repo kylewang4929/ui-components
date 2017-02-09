@@ -69,8 +69,8 @@ class InfoPanel extends Component {
 
     if(infoData.length > 2){
       lineDom = [
-        (<div style={{...styles.verticalLine, ...lineStyle}}></div>),
-        (<div style={{...styles.horizontalLine}}></div>)
+        (<div key="border1" style={{...styles.verticalLine, ...lineStyle}}></div>),
+        (<div key="border2" style={{...styles.horizontalLine}}></div>)
       ];
     }
 
@@ -95,7 +95,7 @@ class InfoPanel extends Component {
               }
 
               return (
-                <div style={{...styles.item, ...padding}} key={'infoitem'+index}>
+                <div style={{...styles.item, ...padding}} key={index}>
                   <div style={{...styles.label, ...labelStyle}}>{item.label}</div>                
                   <div style={{...styles.value, ...valueStyle}}>
                     {item.value}

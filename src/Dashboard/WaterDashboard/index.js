@@ -28,12 +28,12 @@ const styles = {
 class WaterDashboard extends Component {
 
   render() {
-    const {value, unit, valueStyle, unitStyle} = this.props;
+    const {value, unit, valueStyle, unitStyle, waveColor} = this.props;
     return (
       <div className="water-dashboard" style={styles.container}>
         <div className="welcome">
-          <div className="wave" style={{backgroundImage: 'url('+bg+')'}}></div>  
-          <div className="wave-block"></div>      
+          <div className="wave" style={{backgroundColor: waveColor}}></div>  
+          <div className="wave-block" style={{backgroundColor: waveColor}}></div>      
         </div>
         <span className="water-dashboard-content-text" style={Object.assign({}, styles.valueText, valueStyle)}>
           {value}
@@ -46,4 +46,11 @@ class WaterDashboard extends Component {
   }
 }
 
+WaterDashboard.defaultProps = {
+  value: 10,
+  unit: 'TDS',
+  valueStyle: {},
+  unitStyle: {},
+  waveColor: '#0cdaff',
+};
 export default WaterDashboard;

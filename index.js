@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.InputTipsPage = exports.ErrorPage = exports.PowerPage = exports.BarList = exports.InfoPanel = exports.Loading = exports.ConfirmInput = exports.ConfirmAlert = exports.Alert = exports.ColorPick = exports.TabMenu = exports.WaterDashboard = exports.BaseDashboard = exports.AirDashboard = undefined;
+exports.Knob = exports.InputTipsPage = exports.ErrorPage = exports.PowerPage = exports.BarList = exports.InfoPanel = exports.Loading = exports.ConfirmInput = exports.ConfirmAlert = exports.Alert = exports.ColorPick = exports.TabMenu = exports.WaterDashboard = exports.BaseDashboard = exports.AirDashboard = undefined;
 
 var _Dashboard = require('./lib/Dashboard');
 
@@ -37,6 +37,10 @@ var _InputTipsPage = require('./lib/InputTipsPage');
 
 var _InputTipsPage2 = _interopRequireDefault(_InputTipsPage);
 
+var _Knob = require('./lib/Knob');
+
+var _Knob2 = _interopRequireDefault(_Knob);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.AirDashboard = _Dashboard.AirDashboard;
@@ -53,3 +57,4 @@ exports.BarList = _BarList2.default;
 exports.PowerPage = _PowerPage2.default;
 exports.ErrorPage = _ErrorPage2.default;
 exports.InputTipsPage = _InputTipsPage2.default;
+exports.Knob = _Knob2.default;

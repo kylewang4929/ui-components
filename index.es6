@@ -7,9 +7,11 @@ import BarList from './lib/BarList';
 import PowerPage from './lib/PowerPage';
 import ErrorPage from './lib/ErrorPage';
 import InputTipsPage from './lib/InputTipsPage';
+import Knob from './lib/Knob';
 
 export {
     AirDashboard, BaseDashboard, WaterDashboard, TabMenu, 
     ColorPick, Alert, ConfirmAlert, ConfirmInput, Loading, 
-    InfoPanel, BarList, PowerPage, ErrorPage, InputTipsPage
+    InfoPanel, BarList, PowerPage, ErrorPage, InputTipsPage,
+    Knob
 };

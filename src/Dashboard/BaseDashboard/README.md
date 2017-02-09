@@ -39,7 +39,7 @@ class BaseDashboardExample extends Component {
 
     return (
       <div style={styles.container}>
-        <BaseDashboard tips={tips} value={12} them='cold'/>
+        <BaseDashboard tips={tips} value={12}/>
       </div>
     );
   }
@@ -58,7 +58,6 @@ export default BaseDashboardExample;
 |titleStyle|object|`{}`|标题样式|
 |tipsStyle|object|`{}`|tips样式|
 |valueStyle|object|`{}`|value样式|
-|them|string|`cold`|主题，可选`cold`和`warm`|
 
 ## 主题
-> 提供两套主题，`warm`和`cold`，也可自行更改`css`文件。
+> 无。

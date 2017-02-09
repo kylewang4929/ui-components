@@ -70,24 +70,27 @@ class AirDashboard extends Component {
   }
 
   //canvas的绘制方法
-  draw(value) {
+  draw({radian, radius, ringBgColor, ringShadowBlur, ringShadowColor, ringEndColor, ringStarColor}) {
+    this.ctx.clearRect(0, 0, radius * 2, radius * 2);
     this.ctx.beginPath();
+    this.ctx.shadowBlur = 0;
+    this.ctx.shadowColor = 'rgba(0,0,0,0)';
     this.ctx.lineCap = "round";
     this.ctx.lineWidth = 2;
-    this.ctx.strokeStyle = this.props.ringBgColor; //生成的颜色块赋值给样式
-    this.ctx.arc(this.props.radius, this.props.radius, this.props.radius - 10, 0, 2 * Math.PI, false);
+    this.ctx.strokeStyle = ringBgColor; //生成的颜色块赋值给样式
+    this.ctx.arc(radius, radius, radius - 10, 0, 2 * Math.PI, false);
     this.ctx.stroke();
 
     //画渐变
     this.ctx.beginPath();
-    this.ctx.shadowBlur = this.props.ringShadowBlur;
-    this.ctx.shadowColor = this.props.ringShadowColor;
-    let grd = this.ctx.createLinearGradient(0, this.props.radius, this.props.radius * 2, this.props.radius);
-    grd.addColorStop(1, this.props.ringEndColor); //0表示起点..0.1 0.2 ...1表示终点，配置颜色
-    grd.addColorStop(0, this.props.ringStarColor);
+    this.ctx.shadowBlur = ringShadowBlur;
+    this.ctx.shadowColor = ringShadowColor;
+    let grd = this.ctx.createLinearGradient(0, radius, radius * 2, radius);
+    grd.addColorStop(1, ringEndColor); //0表示起点..0.1 0.2 ...1表示终点，配置颜色
+    grd.addColorStop(0, ringStarColor);
     this.ctx.lineWidth = 4;
     this.ctx.strokeStyle = grd; //生成的颜色块赋值给样式
-    this.ctx.arc(this.props.radius, this.props.radius, this.props.radius - 10, 0, value, false);
+    this.ctx.arc(radius, radius, radius - 10, 0, radian, false);
     this.ctx.stroke();
   }
 
@@ -95,16 +98,24 @@ class AirDashboard extends Component {
   componentDidMount() {
     this.ctx = this.canvasDom.getContext('2d');
     const radian = Math.PI / 180 * 180;
-    this.draw(radian);
+    this.draw({radian, ...this.props});
   }
 
   //如果粒子数量改变了，则重新绘制
   componentWillReceiveProps(nextProps) {
     if(this.props.particleNumber != nextProps.particleNumber){
       this.setState({
-        particleDom: this.createParticle(nextProps.particleNumber, {color: this.props.particleColor})
+        particleDom: this.createParticle(nextProps.particleNumber, {color: nextProps.particleColor})
       });
     }
+    if(this.props.particleColor != nextProps.particleColor){
+      this.setState({
+        particleDom: this.createParticle(nextProps.particleNumber, {color: nextProps.particleColor})
+      });
+    }
+    //重新绘制
+    const radian = Math.PI / 180 * 180;
+    this.draw({radian, ...nextProps});
   }
 
   render() {
@@ -284,6 +295,7 @@ class Point extends Component {
     this.transitionEvent && this.dom.addEventListener(this.transitionEvent, this.transitionEnd);
 
     //启动动画
+    clearTimeout(this.transitionEndTimeout);
     this.transitionEndTimeout = setTimeout(() => {
       this.setState({
         class: this.animateClass,
@@ -299,6 +311,7 @@ class Point extends Component {
   }
 
   componentDidMount() {
+    clearTimeout(this.timeOutHandle);
     this.timeOutHandle = setTimeout(() => {
       //设置开始时的动画
       this.setState({
@@ -320,9 +333,9 @@ class Point extends Component {
 
   componentWillUnmount() {
     //清除定时器
+    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);    
     clearTimeout(this.transitionEndTimeout);        
     clearTimeout(this.timeOutHandle);
-    this.dom.removeEventListener(this.transitionEvent, this.transitionEnd);
   }
 
   render() {

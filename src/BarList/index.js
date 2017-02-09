@@ -48,8 +48,6 @@ const itemStyles = {
     position: 'relative',
     color: '#fff',
     margin: '14px 0px',
-    borderRadius: '30px',
-    border: '1px solid #fff',
     padding: '16px 40px'
   },
   label: {},
@@ -99,6 +97,21 @@ BarList.defaultProps = {
   indexStyle: {},
   labelStyle: {},
   valueStyle: {},
+  itemStyle: {
+    "borderColor": "rgba(255,255,255,1)",
+    "borderTopWdith": "1px",
+    "borderRightWdith": "1px",
+    "borderLeftWdith": "1px",
+    "borderBottomWdith": "1px", 
+    "borderTopStyle": "solid",
+    "borderRightStyle": "solid",
+    "borderLeftStyle": "solid",
+    "borderBottomStyle": "solid",
+    "borderTopLeftRadius": "30px",
+    "borderTopRightRadius": "30px",
+    "borderBottomLeftRadius": "30px",
+    "borderBottomRightRadius": "30px"
+  }
 };
 
 BarList.propTypes = {
@@ -108,6 +121,7 @@ BarList.propTypes = {
   indexStyle: PropTypes.object,
   labelStyle: PropTypes.object,
   valueStyle: PropTypes.object,
+  itemStyle: PropTypes.object
 };
 
 export default BarList;

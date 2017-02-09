@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import WaterDashboard from '../src/Dashboard/WaterDashboard';
+import Knob from '../src/Knob';
 
 const styles = {
   container: {
@@ -8,7 +8,7 @@ const styles = {
     height: '100%',
     left: '0px',
     top: '0px',
-    backgroundColor: 'rgb(22, 175, 203)',
+    backgroundColor: '#fff',
   },
 };
 
@@ -21,7 +21,7 @@ class TestPage extends Component {
   render() {
     return (
       <div style={Object.assign({}, styles.container)}>
-        <WaterDashboard value="1" unit="TDS"/>
+        <Knob/>
       </div>
     );
   }
