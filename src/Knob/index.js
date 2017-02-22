@@ -365,7 +365,7 @@ class Point extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.updateValue != this.props.updateValue){
+    if(nextProps.updateValue != this.props.updateValue || nextProps.min != this.props.min|| nextProps.max != this.props.max){
       this.setState({
         deg: this.getDeg(nextProps.updateValue, nextProps.min, nextProps.max, this.minAng, this.maxAng)
       });
