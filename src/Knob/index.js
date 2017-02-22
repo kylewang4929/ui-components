@@ -127,7 +127,7 @@ class Knob extends Component {
 
     //圆心要从dom中计算得知
     this.state = {
-      targetvalue: props.targetValue,
+      targetValue: props.targetValue,
       //用来触发由数据点上报的数据，value改变了的时候更新point
       updateValue: props.targetValue,
       currentValue: props.currentValue,
@@ -150,7 +150,7 @@ class Knob extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       updateValue: nextProps.targetValue,
-      targetvalue: nextProps.targetValue,
+      targetValue: nextProps.targetValue,
       currentValue: nextProps.currentValue,
     });
   }
@@ -159,14 +159,14 @@ class Knob extends Component {
   onChange(value) {
     this.props.onChange(value);
     this.setState({
-      targetvalue: value,
+      targetValue: value,
     });
   }
 
   onChangeAfter(value) {
     this.props.onChangeAfter(value);
     this.setState({
-      targetvalue: value,
+      targetValue: value,
       updateValue: value,
     });
   }
@@ -203,12 +203,27 @@ class Knob extends Component {
 
   render() {
 
-    const {isShow, title, tips} = this.props;
+    const {isShow, title, tips, min, max} = this.props;
+    let {targetValue, updateValue} = this.state;
 
-    const percentage = (this.state.targetvalue - this.props.min) / (this.props.max - this.props.min);
+    //超出最大值的判断
+    if(targetValue < min) {
+      targetValue = min;
+    }
+    if(targetValue > max) {
+      targetValue = max;
+    }
+
+    if(updateValue < min) {
+      updateValue = min;
+    }
+    if(updateValue > max) {
+      updateValue = max;
+    }
+
+    const percentage = (targetValue - min) / (max - min);
     const activeItemIndex = this.calibrationLength * percentage;
 
-    let targetValue = this.state.targetvalue;    
     const remainder = targetValue % this.props.step;
 
     if(remainder > 2){
@@ -223,7 +238,7 @@ class Knob extends Component {
         <div style={styles.content}>
           <div className="title" style={styles.title}>{title}</div>
           <div className="value" style={styles.value}>
-            <span style={styles.valueText}>{this.state.targetvalue}<sup className="transparent-text" style={styles.unit}></sup>
+            <span style={styles.valueText}>{targetValue}<sup className="transparent-text" style={styles.unit}></sup>
             </span>
           </div>
           <div className="state" style={styles.state}>
@@ -238,12 +253,12 @@ class Knob extends Component {
           isShow={isShow}
           onChange={this.onChange}
           onChangeAfter={this.onChangeAfter}
-          value={this.state.targetvalue}
-          min={this.props.min}
-          max={this.props.max}
+          value={targetValue}
+          min={min}
+          max={max}
           cx={this.state.cx}
           cy={this.state.cy}
-          updateValue={this.state.updateValue}
+          updateValue={updateValue}
           startAng={-90}/>
 
         <div style={Object.assign({}, styles.calibration, isShow? {}: styles.hidden)}>
