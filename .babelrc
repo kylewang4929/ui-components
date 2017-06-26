@@ -1,5 +1,5 @@
 {
-  "presets": ["./tools/material-ui-babel-preset-es2015", "stage-1", "react"],
+  "presets": ["stage-1", "react"],
   "plugins": [
   ],
   "env": {

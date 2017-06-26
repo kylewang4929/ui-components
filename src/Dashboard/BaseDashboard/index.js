@@ -47,7 +47,7 @@ const styles = {
     fontSize: '12px',
     display: 'inline-block',
     position: 'relative',
-    padding: '0px 0px 0px 18px'
+    padding: '0px 0px 0px 0px'
   },
 };
 

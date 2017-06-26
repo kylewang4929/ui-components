@@ -12,7 +12,6 @@ class TabMenu extends Component {
   render() {
     const {menus, shadow, boxStyle, textStyle, activeTextStyle} = this.props;
     const width = 100 / menus.length;
-
     return (
       <div className='menu-shadow tab-bar-container' style={boxStyle}>
         {
@@ -40,11 +39,17 @@ class TabMenu extends Component {
 }
 
 TabMenu.defaultProps = {
-  menus: [],
+  menus: [
+    {name: '白灯', icon: 'mdi mdi-lightbulb-outline'},
+    {name: '彩灯', icon: 'mdi mdi-lightbulb-on-outline'},
+    {name: '场景', icon: 'mdi mdi-apps'},
+    {name: '定时', icon: 'mdi mdi-timer'}
+  ],
   onChange: () => {},
   boxStyle: {},
   textStyle: {},
-  activeTextStyle: {}
+  activeTextStyle: {
+  }
 };
 
 TabMenu.propTypes = {

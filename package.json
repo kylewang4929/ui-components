@@ -3,11 +3,12 @@
   "version": "1.0.12",
   "dependencies": {
     "lib-flexible": "^0.3.2",
-    "mdi": "^1.6.50",
+    "mdi": "^1.9.33",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
   },
   "devDependencies": {
+    "@storybook/react": "^3.1.6",
     "autoprefixer": "^6.6.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
@@ -18,6 +19,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-1": "^6.16.0",
     "chai": "^3.5.0",
+    "classnames": "^2.2.5",
     "css-loader": "^0.26.1",
     "eslint-loader": "^1.3.0",
     "file-loader": "^0.9.0",
@@ -42,24 +44,24 @@
     "path": "^0.12.7",
     "phantomjs": "^1.9.18",
     "postcss-loader": "^0.8.0",
+    "rc-tooltip": "^3.4.2",
+    "rc-util": "^4.0.0",
     "react-hot-loader": "^1.3.0",
     "requirejs": "^2.3.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
+    "warning": "^3.0.0",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
-    "classnames": "^2.2.5",
-    "rc-tooltip": "^3.4.2",
-    "rc-util": "^4.0.0",
-    "warning": "^3.0.0"
+    "webpack-dev-server": "^1.16.2"
   },
   "description": "gizwits web components",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
     "build": "sh build.sh",
-    "serve": "webpack-dev-server --devtool eval --progress --colors"
+    "serve": "webpack-dev-server --devtool eval --progress --colors",
+    "storybook": "start-storybook -p 9919 -c .storybook"
   },
   "repository": {
     "type": "git",

@@ -39,7 +39,7 @@ const styles = {
     position: 'absolute',
     marginLeft: '-31px',
     marginTop: '-31px',
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     borderRadius: '50%',
     padding: '10px',
     boxSizing: 'border-box',

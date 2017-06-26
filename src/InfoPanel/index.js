@@ -115,7 +115,12 @@ class InfoPanel extends Component {
 }
 
 InfoPanel.defaultProps = {
-  data: [],
+  data: [
+    {label: 'VOC', value: 10, unit: ''},
+    {label: '滤网', value: 20, unit: '%'},
+    {label: '滤网', value: 20, unit: '%'},
+    {label: '滤网', value: 20, unit: '%'},
+  ],
   lineStyle: {},
   labelStyle: {},
   valueStyle: {},

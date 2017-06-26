@@ -21,13 +21,16 @@ const styles = {
     color: '#fff'
   },
   title: {
-    fontSize: '13px',
-    color: 'rgba(255,255,255,0.9)'
+    color: 'rgba(255,255,255,0.9)',
+    fontSize: "0.4rem",
+    fontWeight: '100'
   },
   value: {
-    fontSize: '60px',
     margin: '12px 0px 12px 0px',
-    lineHeight: '1'
+    lineHeight: '1',
+    position: 'relative',
+    fontSize: '2.4rem',
+    fontWeight: '100',
   },
   sub: {
     color: 'rgba(255,255,255,0.6)'
@@ -36,8 +39,11 @@ const styles = {
     transform: 'scale(0.6,0.6)'
   },
   tips: {
-    fontSize: '13px',
-    color: 'rgba(255,255,255,0.9)'
+    fontSize: '0.34rem',
+    color: '#fff',
+    position: 'relative',
+    fontSize: "0.4rem",
+    fontWeight: '100'  
   },
   pointBox: {
     position: 'absolute',
@@ -152,7 +158,7 @@ class AirDashboard extends Component {
 }
 
 AirDashboard.defaultProps = {
-  radius: 110,
+  radius: 120,
   ringStarColor: 'rgba(255,255,255,1)',
   ringEndColor: 'rgba(255,255,255,0.1)',
   value: 12,
