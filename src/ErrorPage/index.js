@@ -79,10 +79,14 @@ class ErrorPage extends Component {
             })}
           </div>
 
-          <div style={{...styles.button, ...buttonStyle}} className="error-page-button" onClick={onClick}>
-            <div className="over-layer"></div>
-            {buttonText}
-          </div>
+          {
+            onClick? (
+              <div style={{...styles.button, ...buttonStyle}} className="error-page-button" onClick={onClick}>
+                <div className="over-layer"></div>
+                {buttonText}
+              </div>
+            ): null
+          }
         </div>
       </div>
     );
@@ -90,7 +94,7 @@ class ErrorPage extends Component {
 }
 
 ErrorPage.defaultProps = {
-  onClick: () => {},
+  onClick: null,
   iconStyle: {},
   textStyle: {},
   pageStyle: {},

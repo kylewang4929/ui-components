@@ -1,11 +1,13 @@
 .air-dashboard .point-animation-left {
   transition: left 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s;
   -moz-transition: left 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s;
-  -webkit-transition: left 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s; }
+  -webkit-transition: left 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s; 
+}
 .air-dashboard .point-animation-right {
   transition: left 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s;
   -moz-transition: left 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s;
-  -webkit-transition: left 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s; }
+  -webkit-transition: left 7s cubic-bezier(0.4, 0, 0.2, 1) 0s, top 7s cubic-bezier(0.4, 1, 0.2, 1) 0s, transform 5s cubic-bezier(0.4, 0, 0.2, 1) 2s; 
+}
 @keyframes rainRotate {
   from {
     transform: rotate(-250deg); }

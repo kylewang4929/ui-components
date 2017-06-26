@@ -2,9 +2,10 @@
   "name": "gizwits_components",
   "version": "1.0.12",
   "dependencies": {
+    "lib-flexible": "^0.3.2",
+    "mdi": "^1.6.50",
     "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "mdi": "^1.6.50"
+    "react-dom": "^15.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
@@ -47,7 +48,11 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "classnames": "^2.2.5",
+    "rc-tooltip": "^3.4.2",
+    "rc-util": "^4.0.0",
+    "warning": "^3.0.0"
   },
   "description": "gizwits web components",
   "main": "index.js",

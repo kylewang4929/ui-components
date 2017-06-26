@@ -8,10 +8,12 @@ import PowerPage from './lib/PowerPage';
 import ErrorPage from './lib/ErrorPage';
 import InputTipsPage from './lib/InputTipsPage';
 import Knob from './lib/Knob';
+import Switch from './lib/Switch';
+import Slider from './lib/Slider';
 
 export {
     AirDashboard, BaseDashboard, WaterDashboard, TabMenu, 
     ColorPick, Alert, ConfirmAlert, ConfirmInput, Loading, 
     InfoPanel, BarList, PowerPage, ErrorPage, InputTipsPage,
-    Knob
+    Knob, Switch, Slider
 };

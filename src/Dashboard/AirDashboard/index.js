@@ -115,7 +115,9 @@ class AirDashboard extends Component {
     }
     //重新绘制
     const radian = Math.PI / 180 * 180;
-    this.draw({radian, ...nextProps});
+    setTimeout(() => {
+      this.draw({radian, ...nextProps});
+    });
   }
 
   render() {
@@ -170,6 +172,7 @@ AirDashboard.propTypes = {
   value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
+      PropTypes.element,
   ]),
   radius: PropTypes.number,
   ringColor: PropTypes.string,
